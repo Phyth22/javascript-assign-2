@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric Input Validation</title>
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="numericForm">
+        <label for="numericInput">Enter a Number:</label>
+        <input type="text" id="numericInput" name="numericInput" required>
+        <span class="error-message" id="errorNumeric"></span>
+        <br>
+        <button type="button" onclick="validateNumericInput()">Submit</button>
+    </form>
+
+    <script>
+        function validateNumericInput() {
+            var numericInput = document.getElementById('numericInput').value;
+            var errorNumeric = document.getElementById('errorNumeric');
+
+            // Checking if the input is a number
+            if (isNaN(numericInput)) {
+                errorNumeric.textContent = 'Please enter a valid number.';
+            } else {
+                // to Clear error message if input is a number
+                errorNumeric.textContent = '';
+                
+              
+                // For now, alerting the user with the valid input
+                alert('Valid input: ' + numericInput);
+            }
+        }
+    </script>
+
+</body>
+</html>
+
